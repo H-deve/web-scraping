@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" alignment="TOP_CENTER" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="fr.cda.campingcar.Controller.ResultatsController">
+    <Label fx:id="userEmailLabel" layoutX="376.0" layoutY="5.0" prefHeight="18.0" prefWidth="222.0" />
+
+    <Label text="Résultats de la Recherche" styleClass="title-label"/>
+    <ListView fx:id="resultsListView" prefHeight="400" prefWidth="600"/>
+    <Button text="Retour" onAction="#handleBackAction"/>
+</VBox>

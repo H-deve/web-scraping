@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/output.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.0/flowbite.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@1.6.5/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.0/flowbite.min.js"></script>
+
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <title>A Thousand Miles - Contact</title>
+    <style>
+        /* Custom Flexbox Layout */
+        .main-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;  /* Space between columns */
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .left-column {
+            flex: 2;  /* Makes the left column take up more space */
+            min-width: 300px;  /* Minimum width to avoid too small of a column */
+        }
+        .right-column {
+            flex: 1;  /* Makes the right column take up less space */
+            min-width: 250px;  /* Minimum width for the right column */
+        }
+        .form-container {
+            margin-top: 20px;
+        }
+        .form-container input,
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .social-icons a {
+            margin-right: 12px;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+        .social-icons a:hover {
+            color: #1d72b8; /* Change on hover */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<div th:insert="fragments/header :: header"></div>
+
+<section class="main-container px-6 py-12 max-w-screen-xl mx-auto">
+    <!-- Section Heading -->
+    <p class="text-3xl font-semibold text-center mb-8 text-gray-700">Où nous trouver</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12" style="grid-template-columns: 2fr 1fr;">
+        <!-- Left Column: Map and Contact Form -->
+        <div class="left-column space-y-8">
+            <!-- Google Map -->
+            <div class="relative w-full h-72 rounded-lg overflow-hidden shadow-lg">
+                <iframe class="absolute top-0 left-0 w-full h-full"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12080.73732861526!2d-74.0059418!3d40.7127847!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM40zMDA2JzEwLjAiTiA3NMKwMjUnMzcuNyJX!5e0!3m2!1sen!2sus!4v1648482801994!5m2!1sen!2sus"
+                        frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="form-container bg-white p-6 rounded-lg shadow-lg">
+                <form action="#" method="POST" class="space-y-6">
+                    <div class="flex flex-col">
+                        <label for="name" class="font-semibold text-lg text-gray-700">Nom</label>
+                        <input type="text" id="name" name="name" placeholder="nom" required class="p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"/>
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="email" class="font-semibold text-lg text-gray-700">Mail</label>
+                        <input type="email" id="email" name="email" placeholder="Mail" required class="p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"/>
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="message" class="font-semibold text-lg text-gray-700">Message</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Message" required class="p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+                    </div>
+                    <button type="submit" class="bg-green-500 text-white p-3 rounded-md  hover:bg-green-600 transition duration-300">
+                        Envoyer Message
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Right Column: Contact Details and Social Media Icons -->
+        <div class="right-column flex flex-col space-y-8">
+            <!-- Row 1: Nos Bureau and Social Media Icons -->
+            <div class="first-row space-y-6">
+                <!-- Nos Bureau -->
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-700">Nos Bureau</h3>
+                    <p class="text-sm text-gray-600">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum euismod, nulla eu hendrerit suscipit, arcu urna sodales libero, a vehicula urna metus vel tortor. Proin euismod libero vitae bibendum scelerisque.
+                    </p>
+                </div>
+
+                <!-- Social Media Icons -->
+                <div class="social-icons flex gap-6">
+                    <a href="https://facebook.com" target="_blank" class="text-blue-600 hover:text-blue-800">
+                        <i class="fab fa-facebook text-2xl"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="text-pink-600 hover:text-pink-800">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="text-blue-400 hover:text-blue-600">
+                        <i class="fab fa-twitter text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Row 2: Address, Telephone, and Horaires -->
+            <div class="second-row space-y-6" style="margin-top: 169px;">
+                <!-- Address -->
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-700">Address</h4>
+                    <p class="text-sm text-gray-600">1234 Street Name, City, Country</p>
+                </div>
+
+                <!-- Telephone -->
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-700">Telephone</h4>
+                    <p class="text-sm text-gray-600">+1 234 567 890</p>
+                </div>
+
+                <!-- Horaires -->
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-700">Horaires</h4>
+                    <p class="text-sm text-gray-600">
+                        Monday - Friday: 9:00 AM - 6:00 PM<br>
+                        Saturday: 10:00 AM - 4:00 PM<br>
+                        Sunday: Closed
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<div th:insert="fragments/footer :: footer"></div>
+
+</body>
+</html>

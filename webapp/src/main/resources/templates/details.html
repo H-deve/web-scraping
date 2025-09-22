@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Annonce Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        .details-container {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+        }
+
+        .detail-item {
+            margin-bottom: 15px;
+        }
+
+        .detail-label {
+            font-weight: bold;
+            color: #555;
+            display: inline-block;
+            min-width: 150px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+            display: block;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            list-style-type: none;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<h1>Annonce Details</h1>
+<div class="details-container">
+    <div th:each="detail : ${details}">
+        <!-- Vehicle Information -->
+        <div class="detail-item">
+            <span class="detail-label">ID:</span>
+            <span th:text="${detail.id}">[ID]</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Vehicle Name:</span>
+            <span th:text="${detail.vehicleName}">[Vehicle Name]</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Reference:</span>
+            <span th:text="${detail.reference}">[Reference]</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Length:</span>
+            <span th:text="${detail.length}">[Length]</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Height:</span>
+            <span th:text="${detail.height}">[Height]</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Year:</span>
+            <span th:text="${detail.year}">[Year]</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Transmission:</span>
+            <span th:text="${detail.transmission}">[Transmission]</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Fuel Type:</span>
+            <span th:text="${detail.fuelType}">[Fuel Type]</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Consumption:</span>
+            <span th:text="${detail.consumption}">[Consumption]</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Mileage:</span>
+            <span th:text="${detail.mileage}">[Mileage]</span>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Description:</span>
+            <p th:text="${detail.description}">[Description]</p>
+        </div>
+        <div class="detail-item">
+            <span class="detail-label">Availability Date:</span>
+            <span th:text="${detail.availabilityDate}">[Availability Date]</span>
+        </div>
+
+        <!-- Image URLs -->
+        <div class="detail-item">
+            <span class="detail-label">Images:</span>
+            <ul>
+                <li th:each="image : ${detail.imageUrls}">
+                    <img th:src="${image}" alt="Annonce Image" />
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

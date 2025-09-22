@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.cda.campingcar.Controller.ShowDisponibiliteController">
+    <Label fx:id="userEmailLabel" layoutX="376.0" layoutY="5.0" prefHeight="18.0" prefWidth="222.0" />
+
+    <Label text="Disponibilité" layoutX="200.0" layoutY="50.0" style="-fx-font-size: 24px;" />
+    <!-- Example, you can replace this with your actual availability content -->
+    <Label fx:id="disponibiliteLabel" layoutX="50.0" layoutY="100.0" style="-fx-font-size: 16px;" />
+    <Button text="Retour" layoutX="200.0" layoutY="250.0" onAction="#goBack" />
+</AnchorPane>

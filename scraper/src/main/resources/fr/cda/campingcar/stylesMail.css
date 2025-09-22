@@ -1,0 +1,78 @@
+/* General styling for BorderPane */
+.border-pane {
+    -fx-padding: 20;
+    -fx-background-color: #f9f9f9;
+}
+
+/* Header label */
+.header-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+    -fx-alignment: center;
+    -fx-padding: 10 0;
+}
+
+/* Instructions label */
+.form-instructions {
+    -fx-font-size: 16px;
+    -fx-text-fill: #555555;
+}
+
+/* Form fields */
+.form-container {
+    -fx-padding: 15;
+}
+
+.text-field, .text-area {
+    -fx-font-size: 14px;
+    -fx-padding: 8;
+    -fx-border-color: #ced4da;
+    -fx-border-radius: 5;
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 5;
+    -fx-pref-width: 300px;
+}
+
+.text-area {
+    -fx-pref-height: 100px;
+}
+
+/* Buttons */
+.button-container {
+    -fx-padding: 15;
+}
+
+.button {
+    -fx-background-color: #007bff;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 8 15;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.button:hover {
+    -fx-background-color: #0056b3;
+}
+
+/* Selected files label */
+.selected-files-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #333333;
+    -fx-background-color: #f8f9fa;
+    -fx-padding: 10;
+    -fx-border-color: #dee2e6;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+/* Status messages */
+.status-container {
+    -fx-padding: 10;
+}
+
+.status-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #ff0000;
+}

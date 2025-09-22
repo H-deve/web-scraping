@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Annonce List</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+<body>
+<h1>Annonce List</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Type of Vehicle</th>
+        <th>Departure Location</th>
+        <th>Arrival Location</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Price Per Day</th>
+        <th>Description</th>
+        <th>URL</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="annonce : ${annonces}">
+        <td th:text="${annonce.id}">1</td>
+        <td th:text="${annonce.type_vehicule}">Type</td>
+        <td th:text="${annonce.lieu_Depart}">Departure</td>
+        <td th:text="${annonce.lieu_Arrivee}">Arrival</td>
+        <td th:text="${annonce.date_Debut}">2024-01-01</td>
+        <td th:text="${annonce.date_Fin}">2024-01-10</td>
+        <td th:text="${annonce.prix_par_jour}">100</td>
+        <td th:text="${annonce.description}">Description</td>
+        <td><a th:href="${annonce.url}" th:text="${annonce.url}">Visit</a></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

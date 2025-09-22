@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="fr.cda.campingcar.Controller.PDFViewerController">
+    <!-- Top Region (optional, e.g., menu or title) -->
+    <top>
+        <!-- Example: Add a title label or menu bar here if needed -->
+    </top>
+
+    <!-- Center Region: Scrollable PDF Viewer -->
+    <center>
+        <ScrollPane fitToWidth="true" fitToHeight="false"> <!-- fitToHeight is false to allow scrolling -->
+            <content>
+                <VBox fx:id="pdfContainer" spacing="10" />
+            </content>
+        </ScrollPane>
+    </center>
+
+    <!-- Bottom Region (optional, e.g., status bar) -->
+    <bottom>
+        <!-- Example: Add a footer or status bar here if needed -->
+    </bottom>
+
+    <!-- Left Region (optional) -->
+    <left>
+        <!-- Example: Add navigation controls here if needed -->
+    </left>
+
+    <!-- Right Region (optional) -->
+    <right>
+        <!-- Example: Add additional controls or information here -->
+    </right>
+</BorderPane>

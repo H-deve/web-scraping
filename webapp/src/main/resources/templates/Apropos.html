@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/output.css}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.0/flowbite.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@1.6.5/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.0/flowbite.min.js"></script>
+
+    <title> A thousand miles</title>
+
+</head>
+<body>
+<!-- Navbar -->
+<nav class="bg-white shadow-lg">
+    <div class="container mx-auto flex items-center justify-between p-6">
+        <div class="flex items-center">
+            <a href="/"><h1 class="ml-3 text-xl font-bold">
+                <span class="text-green-500">A</span>
+                <span class="text-black">Thousand</span>
+                <span class="text-green-500">Miles</span>
+            </h1>
+            </a>
+        </div>
+        <div class="hidden md:flex space-x-6">
+            <a href="/accueil" class="text-black  hover:text-gray-400">Accueil</a>
+            <a href="/NosVehicules" class="text-black hover:text-gray-400">Nos Véhicules</a>
+            <a href="/about" class="text-black hover:text-gray-400">À Propos</a>
+            <a href="/contact" class="text-black hover:text-gray-400">Contact</a>
+        </div>
+        <button class="block md:hidden focus:outline-none">
+            <img src="/img/menu-icon.png" alt="Menu" class="h-6 w-6">
+        </button>
+    </div>
+</nav>
+
+<div class="main-container py-12 px-4">
+
+    <section class="main-container px-6 py-12 max-w-screen-xl mx-auto">
+        <!-- Section Heading -->
+        <p class="text-3xl font-semibold text-left mb-8 text-gray-700">Notre Histoire</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12" style="grid-template-columns: 1fr 1fr;">
+            <!-- Left Column: Map and Contact Form -->
+            <div class="left-column space-y-8">
+                <!-- Google Map -->
+                <div class="relative w-full h-72 rounded-lg overflow-hidden shadow-lg">
+                    <img src="/img/van-fenetre.jpg">
+                </div>
+            </div>
+            <div class="right-column flex flex-col space-y-8">
+                <!-- Row 1: Nos Bureau and Social Media Icons -->
+                <div class="first-row space-y-6">
+                    <!-- Nos Bureau -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-blue-500">Qui nous sommes & Que faisons-nous ?</h3>
+                        <p class="text-sm text-gray-600">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Vestibulum euismod, nulla eu hendrerit suscipit, arcu urna sodales libero, a vehicula urna
+                            metus vel tortor. Proin euismod libero vitae bibendum scelerisque.
+                        </p>
+                        </br>
+                        <p class="text-sm text-gray-600">
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+                        </p>
+                    </div>
+
+                    <!-- Social Media Icons -->
+                    <div class="social-icons flex gap-6">
+                        <a href="https://facebook.com" target="_blank" class="text-blue-600 hover:text-blue-800">
+                            <i class="fab fa-facebook text-2xl"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" class="text-pink-600 hover:text-pink-800">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" class="text-blue-400 hover:text-blue-600">
+                            <i class="fab fa-twitter text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+<p class="text-3xl font-semibold text-center mb-8 text-gray-700">Notre équipe</p>
+<!-- Container for 3 Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap  justify-center items-center mx-auto max-w-7xl">
+    <!-- Card 1 -->
+    <div class="max-w-sm bg-white border-0 ">
+        <a href="#">
+            <img class="rounded-t-lg" src="/img/team_01.jpg" alt=""/>
+        </a>
+        <div class="p-5">
+            <a href="#">
+                <h5 class="mb-2 text-2xl tracking-tight text-center text-blue-500 dark:text-white">
+                    Johnatan Lestran
+                </h5>
+            </a>
+            <p class="mb-3 font-normal text-center text-green-500 dark:text-gray-400">
+                Fondateur
+            </p>
+            <p class="text-gray-500 text-xl max-w-screen-sm text-center">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut</p>
+
+        </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="max-w-sm bg-white">
+        <a href="#">
+            <img class="rounded-t-lg" src="/img/team_02.jpg" alt=""/>
+        </a>
+        <div class="p-5">
+            <a href="#">
+                <h5 class="mb-2 text-2xl  text-center tracking-tight text-blue-500 dark:text-white">
+                    Maude Le Goff
+                </h5>
+            </a>
+            <p class="mb-3 font-normal text-center text-green-500 dark:text-gray-400">
+                Experte Van
+            </p>
+
+            <p class="text-gray-500 text-xl max-w-screen-sm text-center">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut</p>
+
+        </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="max-w-sm bg-white">
+        <a href="#">
+            <img class="rounded-t-lg" src="/img/team_03.jpg" alt=""/>
+        </a>
+        <div class="p-5">
+            <a href="#">
+                <h5 class="mb-2 text-2xl text-center  text-blue-500 dark:text-white">
+                    Michael Soft
+                </h5>
+            </a>
+            <p class="mb-3 font-normal text-center text-green-500 dark:text-gray-400">
+                Responsable Markiting
+            </p>
+
+            <p class="text-gray-500 text-xl max-w-screen-sm text-center">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut</p>
+
+        </div>
+    </div>
+</div>
+<!-- Background Image Section -->
+
+</div>
+<div class="bg-cover bg-center w-full rounded-lg shadow-lg"
+
+     style="background-image: url('/img/ballade.jpg'); height: 650px;">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto px-4" style="padding-top: 7rem;">
+        <!-- Card 1 -->
+        <div class="bg-white border-0 " style="max-width: 23rem;">
+            <a href="#" class="flex justify-center items-center bg-green-500"
+               style="width: 90px; height: 68px; margin-left: 147px ;margin-top: 50px;">
+                <svg class="h-8 w-8 text-slate-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                     stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z"/>
+                    <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                    <circle cx="12" cy="12" r="3"/>
+                </svg>
+            </a>
+
+            <div class="p-5" style="margin-top: 55px;">
+                <a href="#">
+                    <h5 class="mb-2 text-2xl tracking-tight text-center text-blue-500 dark:text-white">
+                        Gestion Véhicules
+                    </h5>
+                </a>
+
+                <p class="text-gray-500 text-xl max-w-screen-sm text-center">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut</p>
+                <!-- More Info Button -->
+                <div class="flex justify-center mt-4">
+                    <button class="bg-green-500 text-white text-lg px-6 py-2 rounded hover:bg-green-600 transition duration-300">
+                        Plus Info+
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white border-0 " style="max-width: 23rem;">
+            <a href="#" class="flex justify-center items-center bg-green-500"
+               style="width: 90px; height: 68px; margin-left: 147px ;margin-top: 50px;">
+                <svg class="h-8 w-8 text-slate-500" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                </svg>
+
+            </a>
+            <div class="p-5" style="margin-top: 55px;">
+                <a href="#">
+                    <h5 class="mb-2 text-2xl  text-center tracking-tight text-blue-500 dark:text-white">
+                        Relation Clients
+                    </h5>
+                </a>
+
+
+                <p class="text-gray-500 text-xl max-w-screen-sm text-center">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut</p>
+                <!-- More Info Button -->
+                <div class="flex justify-center mt-4">
+                    <button class="bg-green-500 text-white text-lg px-6 py-2 rounded hover:bg-green-600 transition duration-300">
+                        Détails
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white border-0 " style="max-width: 23rem;">
+            <a href="#" class="flex justify-center items-center bg-green-500"
+               style="width: 90px; height: 68px; margin-left: 147px ;margin-top: 50px;">
+                <svg class="h-8 w-8 text-slate-500" width="24" height="24" viewBox="0 0 24 24" stroke-width="2"
+                     stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z"/>
+                    <circle cx="7" cy="17" r="2"/>
+                    <circle cx="17" cy="17" r="2"/>
+                    <path d="M5 17h-2v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6m-6 -6h15m-6 0v-5"/>
+                </svg>
+            </a>
+            <div class="p-5" style="margin-top: 55px;">
+                <a href="#">
+                    <h5 class="mb-2 text-2xl  text-center  text-blue-500 dark:text-white">
+                        Notre Collection
+                    </h5>
+                </a>
+
+
+                <p class="text-gray-500 text-xl max-w-screen-sm text-center">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut</p>
+
+
+                <!-- More Info Button -->
+                <div class="flex justify-center mt-4">
+                    <button class="bg-green-500 text-white text-lg px-6 py-2 rounded hover:bg-green-600 transition duration-300">
+                        Plus Info+
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Notre Partenaire Section -->
+<div class="py-12 px-4 bg-gray-100">
+    <p class="text-3xl font-semibold text-center mb-8 text-gray-700">Nos Partenaires</p>
+    <!-- Container for partenaire Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center items-center mx-auto max-w-7xl">
+        <!-- partenaire 1 -->
+        <div class="max-w-sm bg-white border-0 shadow-lg rounded-lg">
+            <a href="#" class="block">
+                <img class="rounded-t-lg" src="/img/van-ancien.jpg" alt="partenaire 1"/>
+            </a>
+            <div class="p-5">
+                <a href="#">
+                    <h5 class="mb-2 text-2xl text-center tracking-tight text-blue-500 dark:text-white">
+                        partenaire 1
+                    </h5>
+                </a>
+                <p class="text-gray-500 text-xl text-center">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.
+                </p>
+            </div>
+        </div>
+
+        <!-- partenaire 2 -->
+        <div class="max-w-sm bg-white border-0 shadow-lg rounded-lg">
+            <a href="#" class="block">
+                <img class="rounded-t-lg" src="/img/van-fenetre.jpg" alt="partenaire 2"/>
+            </a>
+            <div class="p-5">
+                <a href="#">
+                    <h5 class="mb-2 text-2xl text-center tracking-tight text-blue-500 dark:text-white">
+                        partenaire 2
+                    </h5>
+                </a>
+                <p class="text-gray-500 text-xl text-center">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.
+                </p>
+            </div>
+        </div>
+
+        <!-- partenaire 3 -->
+        <div class="max-w-sm bg-white border-0 shadow-lg rounded-lg">
+            <a href="#" class="block">
+                <img class="rounded-t-lg" src="/img/vw-vert.jpg" alt="partenaire 3"/>
+            </a>
+            <div class="p-5">
+                <a href="#">
+                    <h5 class="mb-2 text-2xl text-center tracking-tight text-blue-500 dark:text-white">
+                        partenaire 3
+                    </h5>
+                </a>
+                <p class="text-gray-500 text-xl text-center">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+

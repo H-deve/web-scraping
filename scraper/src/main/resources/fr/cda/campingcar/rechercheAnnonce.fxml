@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.cda.campingcar.Controller.RechercheAnnonceController">
+
+    <!-- Top Section: Menu Bar -->
+    <top>
+        <MenuBar fx:id="menubar" styleClass="menu-bar">
+            <menus>
+                <Menu text="Fichier">
+                    <items>
+                        <MenuItem fx:id="save" onAction="#handleGeneratePdfAction" text="Enregistrer dans un Fichier PDF" />
+                        <MenuItem onAction="#openCouriel" text="Envoi Couriel" />
+                        <MenuItem fx:id="saveToDatabaseMenuItem" onAction="#handleSaveToDatabase" text="Enregistrer dans la base de données" />
+                        <MenuItem fx:id="quitter" onAction="#handleQuitter" text="Quitter" />
+                    </items>
+                </Menu>
+                <Menu text="Paramètres">
+                    <items>
+                        <MenuItem onAction="#goToConnexionPage" text="Base de données" />
+                    </items>
+                </Menu>
+                <Menu text="Mode d'emploi">
+                    <items>
+                        <MenuItem onAction="#handleModeEmploi" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+
+    <!-- Center Section: Form Content -->
+    <center>
+        <VBox alignment="CENTER" prefHeight="366.0" prefWidth="806.0" spacing="15" styleClass="form-container">
+            <Label styleClass="title-label" text="Recherche d'Annonce" />
+
+            <!-- Vehicle Type -->
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label style="-fx-font-weight: bold;" text="Type de Véhicule:" />
+                <ComboBox fx:id="vehicleTypeComboBox">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Camping Car" />
+                            <String fx:value="Van" />
+                            <String fx:value="Fourgon Aménagé" />
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+            </HBox>
+
+               <!-- Departure Location -->
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label prefHeight="16.0" prefWidth="105.0" style="-fx-font-weight: bold;" text="Lieu de Départ:" />
+                <TextField fx:id="departureField" promptText="Ville de départ">
+               <HBox.margin>
+                  <Insets left="9.0" />
+               </HBox.margin>
+            </TextField>
+            </HBox>
+
+            <!-- Arrival Location -->
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label style="-fx-font-weight: bold;" text="Lieu d'Arrivée:" />
+                <TextField fx:id="arrivalField" prefHeight="33.0" prefWidth="253.0" promptText="Ville d'arrivée">
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin></TextField>
+            </HBox>
+
+            <!-- Rental Period -->
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label prefHeight="16.0" prefWidth="100.0" style="-fx-font-weight: bold;" text="Date de Début:" />
+                <DatePicker fx:id="startDatePicker" prefHeight="33.0" prefWidth="249.0">
+               <HBox.margin>
+                  <Insets left="14.0" />
+               </HBox.margin></DatePicker>
+                <Label style="-fx-font-weight: bold;" text="Date de Fin:" />
+                <DatePicker fx:id="endDatePicker" />
+            </HBox>
+
+            <!-- Price per Day -->
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label style="-fx-font-weight: bold;" text="Prix par Jour (€):" />
+                <TextField fx:id="priceField" promptText="Ex: 50">
+               <HBox.margin>
+                  <Insets left="2.0" right="33.0" />
+               </HBox.margin></TextField>
+            </HBox>
+
+            <!-- Site Selection -->
+            <VBox spacing="5">
+                <Label style="-fx-font-weight: bold;" text="Sélectionnez les sites de recherche:" />
+                <HBox alignment="CENTER" spacing="10">
+                    <CheckBox fx:id="wikiCampersCheckBox" text="WikiCampers" />
+                    <CheckBox fx:id="hapeeCheckBox" text="Hapee" />
+                    <CheckBox fx:id="evasiaCheckBox" text="Evasia" />
+                    <CheckBox fx:id="goboonyCheckBox" text="Goboony" />
+                </HBox>
+            </VBox>
+        </VBox>
+    </center>
+
+    <!-- Bottom Section: Buttons and Progress Bar -->
+    <bottom>
+        <VBox alignment="CENTER" prefHeight="138.0" prefWidth="1034.0" spacing="10">
+            <HBox alignment="CENTER" spacing="10">
+                <Button fx:id="searchButton" onAction="#handleSearchAction" styleClass="action-button" text="Recherche" />
+                <Button fx:id="clearButton" onAction="#handleClearAction" styleClass="action-button" text="Effacer" />
+                <Button fx:id="backButton" onAction="#handleBackAction" styleClass="action-button" text="Retour" />
+            </HBox>
+            <ProgressBar fx:id="progressBar" maxWidth="600" visible="false" />
+        </VBox>
+    </bottom>
+
+    <!-- Left Section: User Info -->
+    <left>
+        <VBox alignment="CENTER" prefHeight="382.0" prefWidth="243.0" spacing="10" styleClass="sidebar">
+            <Label fx:id="userEmailLabel" style="-fx-text-fill: #555;" text="Bienvenue: user@example.com" />
+        </VBox>
+    </left>
+</BorderPane>

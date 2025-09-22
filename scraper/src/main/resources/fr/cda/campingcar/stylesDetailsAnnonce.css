@@ -1,0 +1,38 @@
+
+/* Adjust the vertical scrollbar height */
+.scroll-pane .scroll-bar:vertical {
+    -fx-pref-width: 10px; /* Width of the scrollbar */
+    -fx-background-color: #f1f1f1; /* Background color */
+    -fx-border-radius: 5px; /* Rounded corners */
+    -fx-background-radius: 5px;
+}
+
+/* Adjust the horizontal scrollbar height */
+.scroll-pane .scroll-bar:horizontal {
+    -fx-pref-height: 10px; /* Height of the scrollbar */
+    -fx-background-color: #f1f1f1; /* Background color */
+    -fx-border-radius: 5px; /* Rounded corners */
+    -fx-background-radius: 5px;
+}
+
+
+/* Style the HBox container */
+#imagesContainer {
+    -fx-background-color: #fff;
+    -fx-padding: 10;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+/* Apply rounded corners to each image */
+.image-view {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0.5, 2, 2);
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+/* Optional: Add smooth scrolling effect */
+.scroll-pane .viewport {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 10, 0.5, 0, 0);
+}

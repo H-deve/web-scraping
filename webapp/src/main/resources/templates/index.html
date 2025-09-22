@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/output.css}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.0/flowbite.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@1.6.5/dist/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.0/flowbite.min.js"></script>
+
+
+
+    <title> A Thousand miles</title>
+
+</head>
+<body>
+<div th:insert="fragments/header :: header"></div>
+
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 px-4">
+    <!-- Loop through vehicles -->
+    <div th:each="vehicle : ${details}" class="bg-white shadow rounded overflow-hidden">
+        <!-- Display first image as main image -->
+        <div class="relative">
+            <img th:src="@{${vehicle.imageUrls.get(0)}}" alt="[[${vehicle.vehicleName}]]"
+                 class="w-full h-40 object-cover">
+        </div>
+
+        <!-- Details Section -->
+        <div class="p-4 relative">
+            <!-- Price Section -->
+            <div th:each="annonce : ${all}"
+                 th:if="${annonce.id} == ${vehicle.annonceId}"
+                 class="absolute top-2 right-2 bg-orange-100 text-gray-800 text-sm font-bold rounded p-2 shadow">
+                <span th:text="${annonce.prix_par_jour}"></span>
+            </div>
+            </br>
+            </br>
+            <h3 class="text-lg font-semibold text-blue-500" th:text="${vehicle.vehicleName}"></h3>
+            <div class="text-sm text-gray-600 space-y-2">
+                <p class="flex items-center">
+                    <i class="fas fa-car text-blue-500 mr-2"></i>
+                    <strong th:text="${vehicle.reference}"></strong>
+                </p>
+                <p class="flex items-center">
+                    <i class="fas fa-calendar-alt text-green-500 mr-2"></i>
+                    <strong th:text="${vehicle.year}"></strong>
+                </p>
+                <p class="flex items-center">
+                    <i class="fas fa-cogs text-yellow-500 mr-2"></i>
+                    <strong th:text="${vehicle.transmission}"></strong>
+                </p>
+                <p class="flex items-center">
+                    <i class="fas fa-gas-pump text-red-500 mr-2"></i>
+                    <strong th:text="${vehicle.fuelType}"></strong>
+                </p>
+                <p class="flex items-center">
+                    <i class="fas fa-tachometer-alt text-purple-500 mr-2"></i>
+                    <strong th:text="${vehicle.mileage}"></strong>
+                </p>
+            </div>
+
+            <!--                <p><strong th:text="${vehicle.availabilityDate}"></strong></p>-->
+
+
+
+
+            <!-- Section to display multiple images -->
+            <div class="mt-4">
+                <h4 class="text-sm font-semibold mb-2">Images:</h4>
+                <div class="flex gap-2 overflow-x-auto">
+                    <!-- Loop through imageUrls for the vehicle -->
+                    <img th:each="url : ${vehicle.imageUrls}"
+                         th:src="@{${url}}"
+                         alt="[[${vehicle.vehicleName}]]"
+                         class="w-20 h-20 object-cover rounded shadow">
+                </div>
+            </div>
+            <div class="flex justify-between items-center mt-4">
+
+
+                <button th:each="annonce : ${all}"
+                        th:if="${annonce.id} == ${vehicle.annonceId}"
+                        class="px-4 py-2 rounded bg-blue-300 text-white hover:bg-blue-600">
+
+                    <a th:href="${#strings.substringAfter(annonce.url, 'URL:') + '#booking_sidebar'}" target="_blank"
+                       class="text-gray-800">
+
+                        Réserver
+                    </a>
+                </button>
+
+
+                <button th:each="annonce : ${all}"
+                        th:if="${annonce.id} == ${vehicle.annonceId}"
+                        class="px-4 py-2 rounded bg-gray-300 hover:bg-gray-400">
+                    <a th:href="${#strings.substringAfter(annonce.url, 'URL:') + '#loader-dates-calendar'}"
+                       target="_blank" class="text-gray-800">
+                        Voir Disponibilité
+                    </a>
+                </button>
+
+            </div>
+        </div>
+    </div>
+</section>
+</br>
+</br>
+<section class="main-container px-6 py-12 max-w-screen-xl mx-auto">
+    <!-- Section Heading -->
+    <p class="text-3xl font-semibold text-left mb-8 text-gray-700">
+        À propos de A Thousand Miles
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- Left Column: Map and Contact Form -->
+        <div class="left-column space-y-8">
+            <div class="p-4 bg-white">
+                <h3 class="text-xl font-semibold text-blue-500 mb-2">
+                    Vous recherchez le véhicule de vos rêves ?
+                </h3>
+                <p class="text-sm text-gray-600 mb-4">
+                    Des doutes ou besoin d'aide pour votre projet ? <br>
+                    Nous contacter pour plus d'infos :
+                </p>
+                <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                    <li>Un van avec un double couchage</li>
+                    <li>Un véhicule vintage original tout équipé</li>
+                </ul>
+                <div class="mt-4">
+                    <button class="px-4 py-2 bg-green-500 text-white font-medium rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300">
+                        Plus d'Info +
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Image -->
+        <div class="right-column flex flex-col space-y-8">
+            <div class="relative w-full h-72 rounded-lg overflow-hidden shadow-lg">
+                <img src="/img/van-fenetre.jpg" alt="Image of a van through a window" class="object-cover w-full h-full">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<div th:insert="fragments/footer :: footer"></div>
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('slider', () => ({
+            current: 0,
+            images: ['img/slide_01.jpg', 'img/slide_02.jpg', 'img/slide_03.jpg'],
+            interval: null,
+            init() {
+                this.start();
+            },
+            start() {
+                this.interval = setInterval(() => {
+                    this.current = (this.current + 1) % this.images.length;
+                }, 3000); // Adjusted to 3 seconds for smoother transitions
+            },
+            stop() {
+                clearInterval(this.interval);
+            }
+        }));
+    });
+</script>
+
+
+
+</body>
+</html>

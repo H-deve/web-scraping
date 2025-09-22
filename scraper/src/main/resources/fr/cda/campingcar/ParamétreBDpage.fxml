@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fr.cda.campingcar.Controller.ConnexionController">
+   <children>
+      <TextField fx:id="hostField" layoutX="307.0" layoutY="70.0" promptText="Nom d'host ou adress IP" text="localhost" />
+      <TextField fx:id="dbNameField" layoutX="308.0" layoutY="124.0" promptText="Nom de la base de donnée" text="Campingcar" />
+      <TextField fx:id="portField" layoutX="309.0" layoutY="182.0" promptText="ex:3306" text="3306" />
+      <TextField fx:id="usernameField" layoutX="310.0" layoutY="240.0" promptText="Nom utilisateur" text="root" />
+      <TextField fx:id="passwordField" layoutX="311.0" layoutY="295.0" promptText="Mot de pass utilisateur" text="root" />
+      <Label layoutX="125.0" layoutY="74.0" text="Nom du serveur " />
+      <Label layoutX="125.0" layoutY="128.0" text="Nom de la BDD" />
+      <Label layoutX="125.0" layoutY="199.0" text="Numéro de port " />
+      <Label layoutX="125.0" layoutY="257.0" text="Login Utilisateur" />
+      <Label layoutX="125.0" layoutY="312.0" text="Password Utilisateur " />
+      <Label layoutX="75.0" layoutY="39.0" text="Paramétres de la vase de données" />
+      <Button layoutX="201.0" layoutY="352.0" mnemonicParsing="false" onAction="#handleDatabaseConnectAction" text="Valider" />
+      <Button layoutX="334.0" layoutY="352.0" mnemonicParsing="false" onAction="#handleAnnulerAction" text="Anuuler" />
+      <Label fx:id="userEmailLabel" layoutX="368.0" layoutY="22.0" prefHeight="18.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>
