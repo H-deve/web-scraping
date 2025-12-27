@@ -117,7 +117,8 @@ Purpose:
     Tables store scraped results and metadata
 
 ⚠️ Database setup is manual in this learning project.
-🧪 Testing
+
+### 🧪 Testing
 
 Unit tests are implemented using JUnit.
 
