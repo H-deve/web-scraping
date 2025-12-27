@@ -142,12 +142,24 @@ Test coverage focuses on:
 7. Store results in SQL database
 8. View results via web application
 
-## 📘 Documentation
+### 📄 User Guide (PDF)
+A detailed user guide explaining how to use the JavaFX scraping application.
 
-A detailed **PDF user guide** explaining how to use the scraping application is available in the project.
+- **Location:** `scraper/guide.pdf`
+- Covers UI usage, search criteria, export, and email features
 
-🐛 Known Issues & Limitations
+### 📚 Javadoc
+Complete **Javadoc** is provided for the Java source code.
 
+- Generated from source comments
+- Covers classes, methods, and application architecture
+- Helps developers understand and maintain the code
+
+**How to generate Javadoc:**
+```bash
+cd scraper
+mvn javadoc:javadoc
+```
     ⚠️ Educational Project Notice
     This project is intended for learning purposes and is not production-ready.
 
