@@ -55,7 +55,6 @@ This project was built to practice:
 web-scraping/
 ├── scraper/            # JavaFX desktop scraping application
 ├── webapp/             # Spring Boot web application
-├── database/           # SQL scripts or configuration (optional)
 └── README.md           # Global project documentation
 ```
 🚀 Quick Start
@@ -142,6 +141,10 @@ Test coverage focuses on:
 6. Send results via email
 7. Store results in SQL database
 8. View results via web application
+
+## 📘 Documentation
+
+A detailed **PDF user guide** explaining how to use the scraping application is available in the project.
 
 🐛 Known Issues & Limitations
 
