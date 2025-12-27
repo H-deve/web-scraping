@@ -70,16 +70,16 @@ web-scraping/
     Internet connection (for scraping)
 
 1️⃣ Clone the Repository
-
+```bash
 git clone https://github.com/your-username/web-scraping.git
 cd web-scraping
-
+```
 2️⃣ Scraper Application (JavaFX)
-
+```bash
 cd scraper
 mvn clean install
 mvn javafx:run
-
+```
 Features:
 
     Input search criteria
@@ -95,11 +95,11 @@ Features:
     Store results in SQL database
 
 3️⃣ Web Application (Spring Boot)
-
+```bash
 cd ../webapp
 mvn clean install
 mvn spring-boot:run
-
+```
 Web app runs at:
 👉 http://localhost:8080
 
